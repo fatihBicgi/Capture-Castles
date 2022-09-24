@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7017356148960970519}
   - component: {fileID: 7017356148960970518}
   m_Layer: 0
-  m_Name: Yellow Function
+  m_Name: Enhancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

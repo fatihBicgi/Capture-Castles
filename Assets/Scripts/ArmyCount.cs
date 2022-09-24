@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandleControl : MonoBehaviour
+public class ArmyCount : MonoBehaviour
 {
     //sayý kontrollerinin yapýldýðý bir kod referansý ArmyCount
     //oyunda toplanýlan þeyler trigger enhancer(yukarýdakiler dragon aþaðýdakiler infantry artýrýr, bir hýz vs bonusu vardýr.)
@@ -15,17 +15,14 @@ public class HandleControl : MonoBehaviour
     // sonuçta biraz rastgelelik eklen(e)ir(random)
     // sýradaki kaledeki düþman sayýsý içn de biraz rastgelelik eklen(e)bilir.
 
-    [SerializeField] 
-    float dragSpeed, moveSpeed;
+    [SerializeField]
+    private int maxInfantryCount,maxDragonCount;
+
+    public int currentInfantryCount,currentDragonCount;
+
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
-        if(Input.touchCount>0)
-        {
-            Touch touch = Input.GetTouch(0);
-            transform.Translate(Vector3.right* touch.deltaPosition.x* dragSpeed);
-            
-
-        }
+        //Debug.Log(currentInfantryCount);
     }
+
 }
