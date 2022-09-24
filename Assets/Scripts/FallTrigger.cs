@@ -15,12 +15,18 @@ public class FallTrigger : MonoBehaviour
     // sonuçta biraz rastgelelik eklen(e)ir(random)
     // sýradaki kaledeki düþman sayýsý içn de biraz rastgelelik eklen(e)bilir.
 
-    ArmyCount armyCount;
+    //ArmyCount armyCount;
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag== "Player")
+        
+        if (other.tag== "Infantry")
         {
-            armyCount.currentInfantryCount--;
+           FindObjectOfType<ArmyCount>().currentInfantryCount--;
+           
         }
+        
     }
+    
 }

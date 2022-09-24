@@ -7,7 +7,7 @@ public class Enhancer : MonoBehaviour
     //ArmyCount armyCount;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ss");
+        
         if (other.tag == "Infantry")
         {
             FindObjectOfType<ArmyCount>().currentInfantryCount++;
@@ -17,8 +17,5 @@ public class Enhancer : MonoBehaviour
             FindObjectOfType<ArmyCount>().currentDragonCount++;
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("aaa");
-    }
+   
 }
