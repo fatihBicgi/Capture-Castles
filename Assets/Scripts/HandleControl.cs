@@ -17,15 +17,50 @@ public class HandleControl : MonoBehaviour
 
     [SerializeField] 
     float dragSpeed, moveSpeed;
+
+    private bool isPlayerFallableLeft=false, isPlayerFallableRight=false;
+
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
-        if(Input.touchCount>0)
+
+        IsPlayerFallableCheck();
+
+        TranslateForward();
+
+        if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            transform.Translate(Vector3.right* touch.deltaPosition.x* dragSpeed);
-            
 
+            if (!isPlayerFallableLeft && touch.deltaPosition.x < 0)
+            {
+                TranslateSide(touch);
+                isPlayerFallableRight = false;
+            }
+            if (!isPlayerFallableRight && touch.deltaPosition.x > 0)
+            {
+                TranslateSide(touch);
+                isPlayerFallableLeft = false;
+            }
         }
+    }
+    private void IsPlayerFallableCheck()
+    {
+        if (transform.position.z <= -1)
+        {
+            isPlayerFallableLeft = true;
+        }
+        if (transform.position.z >= 5)
+        {
+            isPlayerFallableRight = true;
+        }
+    }
+    private void TranslateForward()
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+    }
+
+    private void TranslateSide(Touch touch)
+    {
+        transform.Translate(Vector3.right * touch.deltaPosition.x * dragSpeed);
     }
 }
