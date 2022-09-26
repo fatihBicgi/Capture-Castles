@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7017356148960970516}
   m_LocalRotation: {x: 8.881784e-16, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 7.6400003, y: 4.49, z: 3}
-  m_LocalScale: {x: 2.0083, y: 1, z: 0.001}
+  m_LocalPosition: {x: 7.6400003, y: 4.49, z: 3.4845}
+  m_LocalScale: {x: 2, y: 1, z: 0.001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -108,9 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d96bc5a232f544fa00ba7bc7b9db3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infantryLeftSpawn: {fileID: 0}
-  infantryRightSpawn: {fileID: 0}
   infantryPrefab: {fileID: 1194915200684165380, guid: 99fedd96794026949b3b6f60ae502ed9, type: 3}
   dragonPrefab: {fileID: 7566033135400450587, guid: 392f4b5d16502ed47b1eb64022892d04, type: 3}
-  leftLineParent: {fileID: 0}
-  rightLineParent: {fileID: 0}
