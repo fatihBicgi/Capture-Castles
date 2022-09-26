@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7017356148960970512}
   - component: {fileID: 7017356148960970519}
   - component: {fileID: 7017356148960970518}
+  - component: {fileID: 5875781010866157706}
   m_Layer: 0
   m_Name: Enhancer
   m_TagString: Untagged
@@ -95,3 +96,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5875781010866157706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017356148960970516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d96bc5a232f544fa00ba7bc7b9db3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infantryLeftSpawn: {fileID: 0}
+  infantryRightSpawn: {fileID: 0}
+  infantryPrefab: {fileID: 1194915200684165380, guid: 99fedd96794026949b3b6f60ae502ed9, type: 3}
+  dragonPrefab: {fileID: 7566033135400450587, guid: 392f4b5d16502ed47b1eb64022892d04, type: 3}
+  leftLineParent: {fileID: 0}
+  rightLineParent: {fileID: 0}

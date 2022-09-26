@@ -19,7 +19,6 @@ public class HandleControl : MonoBehaviour
     float dragSpeed, moveSpeed;
 
     private bool isPlayerFallableLeft=false, isPlayerFallableRight=false;
-
     void Update()
     {
 
@@ -31,18 +30,29 @@ public class HandleControl : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            if (!isPlayerFallableLeft && touch.deltaPosition.x < 0)
+            if (isPlayerCanMoveLeft(ref touch))
             {
                 TranslateSide(touch);
                 isPlayerFallableRight = false;
             }
-            if (!isPlayerFallableRight && touch.deltaPosition.x > 0)
+            if (isPlayerCanMoveRight(ref touch))
             {
                 TranslateSide(touch);
                 isPlayerFallableLeft = false;
             }
         }
     }
+
+    private bool isPlayerCanMoveRight(ref Touch touch)
+    {
+        return !isPlayerFallableRight && touch.deltaPosition.x > 0;
+    }
+
+    private bool isPlayerCanMoveLeft(ref Touch touch)
+    {
+        return !isPlayerFallableLeft && touch.deltaPosition.x < 0;
+    }
+
     private void IsPlayerFallableCheck()
     {
         if (transform.position.z <= -1)
