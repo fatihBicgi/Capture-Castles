@@ -20,9 +20,6 @@ public class ArmyCount : MonoBehaviour
 
     public int currentInfantryCount,currentDragonCount;
 
-    void Update()
-    {
-        //Debug.Log(currentInfantryCount);
-    }
+  
 
 }

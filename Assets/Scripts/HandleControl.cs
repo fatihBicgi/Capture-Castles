@@ -19,9 +19,8 @@ public class HandleControl : MonoBehaviour
     float dragSpeed, moveSpeed;
 
     private bool isPlayerFallableLeft=false, isPlayerFallableRight=false;
-    void Update()
-    {
-
+    void FixedUpdate()
+    { 
         IsPlayerFallableCheck();
 
         TranslateForward();
