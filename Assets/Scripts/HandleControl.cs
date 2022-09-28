@@ -15,8 +15,10 @@ public class HandleControl : MonoBehaviour
     // sonuçta biraz rastgelelik eklen(e)ir(random)
     // sýradaki kaledeki düþman sayýsý içn de biraz rastgelelik eklen(e)bilir.
 
-    [SerializeField] 
-    float dragSpeed, moveSpeed;
+    [SerializeField]
+    float dragSpeed; 
+        
+    public float moveSpeed;
 
     private bool isPlayerFallableLeft=false, isPlayerFallableRight=false;
     void FixedUpdate()

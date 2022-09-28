@@ -9,6 +9,9 @@ public class EnemyArmy : MonoBehaviour
     [SerializeField]
     private int enemyInfantryCount, enemyDragonCount;
 
+    [SerializeField]
+    private Transform center;
+
     private GameObject infantrySpawn, airforceSpawn, enemyParent ;
 
     int spawnQueue = 0;
@@ -20,13 +23,11 @@ public class EnemyArmy : MonoBehaviour
     {
         infantrySpawn = GameObject.Find("Enemy Infantry Spawn Point");
         airforceSpawn = GameObject.Find("Enemy AirForce Spawn Point");
-        enemyParent = GameObject.Find("Simple Wooden Castle");
-
-        ;
+        enemyParent = GameObject.Find("EnemyArmy");     
 
         for (spawnQueue=0; spawnQueue < enemyInfantryCount; spawnQueue++)
         {
-            if (spawnQueue % 3 == 0 && spawnQueue != 0)
+            if (spawnQueue % 2 == 0 && spawnQueue != 0)
             {
                 InfantrySetNewLineStartPoint();
             }
@@ -52,6 +53,12 @@ public class EnemyArmy : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            other.transform.position = center.position;
+
+            FindObjectOfType<EnemyAi>().playerOnTriggerEntered = true;
+
+            FindObjectOfType<HandleControl>().moveSpeed = 0;
+
             if (isPlayerStrongerThanEnemy())
             {
                 Debug.Log("You Win");
@@ -67,7 +74,7 @@ public class EnemyArmy : MonoBehaviour
 
     private void AirforceInstantiateToNewPoint()
     {
-        Vector3 stepToNextLine = Vector3.left * 8;
+        Vector3 stepToNextLine = Vector3.left * 6;
 
         GameObject clone = Instantiate(dragonPrefab, airforceSpawn.transform.position, airforceSpawn.transform.rotation);
         clone.transform.parent = enemyParent.transform;
@@ -94,13 +101,13 @@ public class EnemyArmy : MonoBehaviour
     private void AirforceSetNewLineStartPoint()
     {
         airforceSpawn.transform.position += airforceSpawn.transform.TransformDirection(Vector3.up * 1);
-        airforceSpawn.transform.position += airforceSpawn.transform.TransformDirection(Vector3.right * 16);
+        airforceSpawn.transform.position += airforceSpawn.transform.TransformDirection(Vector3.right * 12);
     }
 
     private void InfantrySetNewLineStartPoint()
     {
-        infantrySpawn.transform.position += infantrySpawn.transform.TransformDirection(Vector3.forward * 2);
-        infantrySpawn.transform.position += infantrySpawn.transform.TransformDirection(Vector3.right * 3);
+        infantrySpawn.transform.position += infantrySpawn.transform.TransformDirection(Vector3.forward);
+        infantrySpawn.transform.position += infantrySpawn.transform.TransformDirection(Vector3.right * 2);
     }
 
    
