@@ -12,6 +12,7 @@ public class EnemyArmy : MonoBehaviour
     [SerializeField]
     private Transform center;
 
+    [SerializeField]
     private GameObject infantrySpawn, airforceSpawn, enemyParent ;
 
     int spawnQueue = 0;
@@ -20,10 +21,7 @@ public class EnemyArmy : MonoBehaviour
     GameObject infantryPrefab, dragonPrefab;
 
     private void Start()
-    {
-        infantrySpawn = GameObject.Find("Enemy Infantry Spawn Point");
-        airforceSpawn = GameObject.Find("Enemy AirForce Spawn Point");
-        enemyParent = GameObject.Find("EnemyArmy");     
+    {           
 
         for (spawnQueue=0; spawnQueue < enemyInfantryCount; spawnQueue++)
         {
@@ -53,24 +51,48 @@ public class EnemyArmy : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.transform.position = center.position;
+            //other.transform.position = center.position;         
 
-            FindObjectOfType<EnemyAi>().playerOnTriggerEntered = true;
-
-            FindObjectOfType<HandleControl>().moveSpeed = 0;
+            FindObjectOfType<HandleControl>().moveSpeed = 2;
 
             if (isPlayerStrongerThanEnemy())
             {
-                Debug.Log("You Win");
+                
+
+                StartCoroutine(WinTheStage());
+
+                
             }
             else
             {
-                Debug.Log("You Lose");
+                                
+               StartCoroutine(GameOver());
+
             }
+
+
         }
     }
+    IEnumerator WinTheStage()
+    {
+        Debug.Log("You Win");
 
-   
+        yield return new WaitForSeconds(3);
+
+        Destroy(gameObject);
+        FindObjectOfType<HandleControl>().moveSpeed = 5;
+    }
+    IEnumerator GameOver()
+    {
+
+        Debug.Log("You Lose");
+       
+        yield return new WaitForSeconds(3);
+        
+        Time.timeScale = 0;
+        
+    }
+
 
     private void AirforceInstantiateToNewPoint()
     {

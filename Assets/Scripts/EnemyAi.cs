@@ -7,14 +7,11 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
 
-    public bool playerOnTriggerEntered=false;
+    
 
     void Update()
     {
-        if(playerOnTriggerEntered)
-        {
-            transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
-        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
