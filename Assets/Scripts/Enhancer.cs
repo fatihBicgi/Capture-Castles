@@ -48,7 +48,7 @@ public class Enhancer : MonoBehaviour
 
             if (!(isCurrentDragonCountOdd))
             {
-                airforceLeftSpawn.transform.position += airforceLeftSpawn.transform.TransformDirection(Vector3.up);
+                airforceLeftSpawn.transform.position += airforceLeftSpawn.transform.TransformDirection(Vector3.up * 0.6f);
 
                 GameObject clone = Instantiate(dragonPrefab, airforceLeftSpawn.transform.position, airforceLeftSpawn.transform.rotation);
                 clone.transform.parent = airforceLeftLineParent.transform;
@@ -60,7 +60,7 @@ public class Enhancer : MonoBehaviour
                 GameObject clone = Instantiate(dragonPrefab, airforceRightSpawn.transform.position, airforceRightSpawn.transform.rotation);
                 clone.transform.parent = airforceRightLineParent.transform;
 
-                airforceRightSpawn.transform.position += airforceRightSpawn.transform.TransformDirection(Vector3.up);
+                airforceRightSpawn.transform.position += airforceRightSpawn.transform.TransformDirection(Vector3.up * 0.6f);
             }
 
         }
@@ -98,11 +98,11 @@ public class Enhancer : MonoBehaviour
 
     private void RightSetNewInfantrySpawnPoint()
     {
-        infantryRightSpawn.transform.position += infantryRightSpawn.transform.TransformDirection(Vector3.forward);
+        infantryRightSpawn.transform.position += infantryRightSpawn.transform.TransformDirection(Vector3.forward*0.6f);
     }
 
     private void LeftSetNewInfantrySpawnPoint()
     {
-        infantryLeftSpawn.transform.position += infantryLeftSpawn.transform.TransformDirection(Vector3.forward);
+        infantryLeftSpawn.transform.position += infantryLeftSpawn.transform.TransformDirection(Vector3.forward * 0.6f);
     }
 }
