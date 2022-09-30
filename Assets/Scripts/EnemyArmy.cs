@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyArmy : MonoBehaviour
 {
@@ -15,13 +16,17 @@ public class EnemyArmy : MonoBehaviour
     [SerializeField]
     private GameObject infantrySpawn, airforceSpawn, enemyParent ;
 
+    [SerializeField]
+    private GameObject retry;
+
     int spawnQueue = 0;
 
     [SerializeField]
     GameObject infantryPrefab, dragonPrefab;
 
     private void Start()
-    {           
+    {
+        retry = GameObject.Find("retry");
 
         for (spawnQueue=0; spawnQueue < enemyInfantryCount; spawnQueue++)
         {
@@ -46,6 +51,7 @@ public class EnemyArmy : MonoBehaviour
 
         }
 
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -56,20 +62,13 @@ public class EnemyArmy : MonoBehaviour
             FindObjectOfType<HandleControl>().moveSpeed = 2;
 
             if (isPlayerStrongerThanEnemy())
-            {
-                
-
-                StartCoroutine(WinTheStage());
-
-                
+            {                
+                StartCoroutine(WinTheStage());               
             }
             else
-            {
-                                
+            {                               
                StartCoroutine(GameOver());
-
             }
-
 
         }
     }
@@ -84,15 +83,14 @@ public class EnemyArmy : MonoBehaviour
     }
     IEnumerator GameOver()
     {
-
         Debug.Log("You Lose");
        
         yield return new WaitForSeconds(3);
-        
-        Time.timeScale = 0;
-        
-    }
 
+        Time.timeScale = 0;
+        retry.GetComponent<Image>().enabled = true;
+        retry.GetComponentInChildren<Text>().enabled = true;
+    }
 
     private void AirforceInstantiateToNewPoint()
     {
