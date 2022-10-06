@@ -19,6 +19,9 @@ public class EnemyArmy : MonoBehaviour
     [SerializeField]
     private GameObject retry;
 
+    [SerializeField]
+    private GameObject capturedText;
+
     int spawnQueue = 0;
 
     [SerializeField]
@@ -27,6 +30,9 @@ public class EnemyArmy : MonoBehaviour
     private void Start()
     {
         retry = GameObject.Find("retry");
+        capturedText = GameObject.Find("Captured Text");
+
+        
 
         for (spawnQueue=0; spawnQueue < enemyInfantryCount; spawnQueue++)
         {
@@ -75,11 +81,22 @@ public class EnemyArmy : MonoBehaviour
     IEnumerator WinTheStage()
     {
         Debug.Log("You Win");
+     
 
         yield return new WaitForSeconds(3);
 
+        capturedText.GetComponent<Text>().enabled = true;
+
+        yield return new WaitForSeconds(1);
+
+        capturedText.GetComponent<Text>().enabled = false;
+
         Destroy(gameObject);
         FindObjectOfType<HandleControl>().moveSpeed = 5;
+
+
+        
+
     }
     IEnumerator GameOver()
     {
