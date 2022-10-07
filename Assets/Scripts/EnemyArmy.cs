@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyArmy : MonoBehaviour
+public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script belirliyor?
 {
     //düþman piyadeleri merdiven gibi bir yerde beklese sayýlarý uzaktan daha net belli olur
 
@@ -65,7 +65,7 @@ public class EnemyArmy : MonoBehaviour
         {
             //other.transform.position = center.position;         
 
-            FindObjectOfType<HandleControl>().moveSpeed = 2;
+            FindObjectOfType<HandleControl>().currentMoveSpeed = FindObjectOfType<HandleControl>().slowMoveSpeed;
 
             if (isPlayerStrongerThanEnemy())
             {                
@@ -75,13 +75,14 @@ public class EnemyArmy : MonoBehaviour
             {                               
                StartCoroutine(GameOver());
             }
-
+            
         }
     }
     IEnumerator WinTheStage()
     {
         Debug.Log("You Win");
-     
+
+        
 
         yield return new WaitForSeconds(3);
 
@@ -92,7 +93,9 @@ public class EnemyArmy : MonoBehaviour
         capturedText.GetComponent<Text>().enabled = false;
 
         Destroy(gameObject);
-        FindObjectOfType<HandleControl>().moveSpeed = 5;
+
+        FindObjectOfType<HandleControl>().defaultMoveSpeed = FindObjectOfType<HandleControl>().defaultMoveSpeed + FindObjectOfType<HandleControl>().increaseMoveSpeed;
+        FindObjectOfType<HandleControl>().currentMoveSpeed = FindObjectOfType<HandleControl>().defaultMoveSpeed;
 
 
         

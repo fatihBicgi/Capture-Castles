@@ -18,11 +18,22 @@ public class HandleControl : MonoBehaviour
     [SerializeField]
     float dragSpeed; 
         
-    public float moveSpeed;
+    public float defaultMoveSpeed, slowMoveSpeed, increaseMoveSpeed;
+
+    [HideInInspector]
+    public float currentMoveSpeed;
 
     private bool isPlayerFallableLeft=false, isPlayerFallableRight=false;
+
+    private void Start()
+    {
+        currentMoveSpeed = defaultMoveSpeed;
+    }
     void FixedUpdate()
-    { 
+    {
+
+        Debug.Log(currentMoveSpeed);
+
         IsPlayerFallableCheck();
 
         TranslateForward();
@@ -67,7 +78,7 @@ public class HandleControl : MonoBehaviour
     }
     private void TranslateForward()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * currentMoveSpeed);
     }
 
     private void TranslateSide(Touch touch)
