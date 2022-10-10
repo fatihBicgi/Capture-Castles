@@ -16,17 +16,21 @@ public class HandleControl : MonoBehaviour
     // sýradaki kaledeki düþman sayýsý içn de biraz rastgelelik eklen(e)bilir.
 
     [SerializeField]
-    float dragSpeed; 
+    private float dragSpeed; 
         
     public float defaultMoveSpeed, slowMoveSpeed, increaseMoveSpeed;
 
     [HideInInspector]
     public float currentMoveSpeed;
 
+    [SerializeField]
+    Vector3 firstPosition;
+
     private bool isPlayerFallableLeft=false, isPlayerFallableRight=false;
 
     private void Start()
     {
+        firstPosition = transform.position;
         currentMoveSpeed = defaultMoveSpeed;
     }
     void FixedUpdate()
@@ -67,11 +71,11 @@ public class HandleControl : MonoBehaviour
 
     private void IsPlayerFallableCheck()
     {
-        if (transform.position.z <= -1)
+        if (transform.position.z - firstPosition.z <= -3)
         {
             isPlayerFallableLeft = true;
         }
-        if (transform.position.z >= 5)
+        if (transform.position.z - firstPosition.z >= 3)
         {
             isPlayerFallableRight = true;
         }

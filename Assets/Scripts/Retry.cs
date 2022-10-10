@@ -11,4 +11,11 @@ public class Retry : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
+
+
+    public void RetryForSecondLevel()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+    }
 }

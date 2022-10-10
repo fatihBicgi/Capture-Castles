@@ -10,8 +10,16 @@ public class Enhancer : MonoBehaviour
     [SerializeField]
     GameObject infantryPrefab, dragonPrefab;
 
+    private GameObject ArmyAndCam;
+
+    ArmyCount armyCount;
+
     private void Start()
     {
+        ArmyAndCam = GameObject.Find("Army and Cam");
+        armyCount = ArmyAndCam.GetComponent<ArmyCount>();
+
+
         InfantryAssignment();
 
         AirforceAssignment();
@@ -22,12 +30,12 @@ public class Enhancer : MonoBehaviour
     {      
         if (other.tag == "Infantry")
         {
-            FindObjectOfType<ArmyCount>().currentInfantryCount++;
+            armyCount.currentInfantryCount++;
 
-            bool isCurrentInfantryCountOdd = FindObjectOfType<ArmyCount>().currentInfantryCount % 2 == 1;
+            bool isCurrentInfantryCountOdd = armyCount.currentInfantryCount % 2 == 1;
 
 
-            if ( !(isCurrentInfantryCountOdd) && FindObjectOfType<ArmyCount>().currentInfantryCount > 0)
+            if ( !(isCurrentInfantryCountOdd) && armyCount.currentInfantryCount > 0)
             {
                 LeftInstantiateNewInfantry();
 
@@ -42,9 +50,9 @@ public class Enhancer : MonoBehaviour
         }
         else if (other.tag == "Dragon")
         {
-            FindObjectOfType<ArmyCount>().currentDragonCount++;
+            armyCount.currentDragonCount++;
 
-            bool isCurrentDragonCountOdd = FindObjectOfType<ArmyCount>().currentDragonCount % 2 == 1;
+            bool isCurrentDragonCountOdd = armyCount.currentDragonCount % 2 == 1;
 
             if (!(isCurrentDragonCountOdd))
             {

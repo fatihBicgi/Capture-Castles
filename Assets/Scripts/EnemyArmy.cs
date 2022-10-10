@@ -19,8 +19,13 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
     [SerializeField]
     private GameObject retry;
 
+    
+    private GameObject ArmyAndCam;
+
     [SerializeField]
     private GameObject capturedText;
+
+    HandleControl handleControl;
 
     int spawnQueue = 0;
 
@@ -29,6 +34,10 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
 
     private void Start()
     {
+        ArmyAndCam = GameObject.Find("Army and Cam");
+
+        handleControl = ArmyAndCam.GetComponent<HandleControl>();
+
         retry = GameObject.Find("retry");
         capturedText = GameObject.Find("Captured Text");
 
@@ -65,7 +74,7 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
         {
             //other.transform.position = center.position;         
 
-            FindObjectOfType<HandleControl>().currentMoveSpeed = FindObjectOfType<HandleControl>().slowMoveSpeed;
+            handleControl.currentMoveSpeed = handleControl.slowMoveSpeed;
 
             if (isPlayerStrongerThanEnemy())
             {                
@@ -81,7 +90,6 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
     IEnumerator WinTheStage()
     {
         Debug.Log("You Win");
-
         
 
         yield return new WaitForSeconds(3);
@@ -94,8 +102,8 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
 
         Destroy(gameObject);
 
-        FindObjectOfType<HandleControl>().defaultMoveSpeed = FindObjectOfType<HandleControl>().defaultMoveSpeed + FindObjectOfType<HandleControl>().increaseMoveSpeed;
-        FindObjectOfType<HandleControl>().currentMoveSpeed = FindObjectOfType<HandleControl>().defaultMoveSpeed;
+        handleControl.defaultMoveSpeed = handleControl.defaultMoveSpeed + handleControl.increaseMoveSpeed;
+        handleControl.currentMoveSpeed = handleControl.defaultMoveSpeed;
 
 
         
