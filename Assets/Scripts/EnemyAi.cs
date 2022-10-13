@@ -5,9 +5,7 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed;
-
-    
+    private float moveSpeed;   
 
     void Update()
     {
