@@ -51,7 +51,6 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
             }
 
             InfantryInstantiateToNewPoint();
-
         }
 
         for (spawnQueue = 0; spawnQueue < enemyDragonCount; spawnQueue++)
@@ -104,8 +103,6 @@ public class EnemyArmy : MonoBehaviour //kazanma kaybetme duurmlarýný bu script 
 
         handleControl.defaultMoveSpeed = handleControl.defaultMoveSpeed + handleControl.increaseMoveSpeed;
         handleControl.currentMoveSpeed = handleControl.defaultMoveSpeed;
-
-
         
 
     }
