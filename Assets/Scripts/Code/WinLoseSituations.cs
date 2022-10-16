@@ -1,18 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinLoseSituations : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    HandleControl handleControl;
+    PlayerArmy playerArmy;
+    HandleEnemyArmy enemyArmy;
+
+    [SerializeField]
+    private GameObject capturedText;
+
+    [SerializeField]
+    private GameObject retry;
+
+    private GameObject currentCastle;
+
+    private void Start()
     {
+        handleControl = gameObject.GetComponent<HandleControl>();
+        playerArmy = gameObject.GetComponent<PlayerArmy>();
         
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Enemy Castle")
+        {
+            enemyArmy = other.gameObject.GetComponent<HandleEnemyArmy>();
+
+            handleControl.currentMoveSpeed = handleControl.slowMoveSpeed;
+
+            if (playerArmy.currentInfantryCount > enemyArmy.currentInfantryCount)
+            {
+                StartCoroutine(WinTheStage());
+
+                currentCastle = other.gameObject;
+            }
+            else
+            {
+                StartCoroutine(GameOver());
+            }
+
+        }
+    }
+    IEnumerator WinTheStage()
+    {
+        Debug.Log("You Win");
+
+
+        yield return new WaitForSeconds(3);
+
+        capturedText.GetComponent<Text>().enabled = true;
+
+        yield return new WaitForSeconds(1);
+
+        capturedText.GetComponent<Text>().enabled = false;
+
+        Destroy(currentCastle);
+
+        handleControl.defaultMoveSpeed = handleControl.defaultMoveSpeed + handleControl.increaseMoveSpeed;
+        handleControl.currentMoveSpeed = handleControl.defaultMoveSpeed;
+
+
+    }
+    IEnumerator GameOver()
+    {
+        Debug.Log("You Lose");
+
+        yield return new WaitForSeconds(3);
+
+        Time.timeScale = 0;
+        retry.GetComponent<Image>().enabled = true;
+        retry.GetComponentInChildren<Text>().enabled = true;
     }
 }

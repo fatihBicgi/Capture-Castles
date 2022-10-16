@@ -957,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3407149674568958940, guid: 766c3bc31f681d54b93370c9bde544d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 372.79
+      value: 377.42
       objectReference: {fileID: 0}
     - target: {fileID: 3407149674568958940, guid: 766c3bc31f681d54b93370c9bde544d0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1287,6 +1287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7596bd42e70ca2044a2963c1e008e849, type: 3}
+--- !u!1 &171188496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6992329356226047634, guid: 5222ddabc5a720b499bb5cfb13bc4fa8, type: 3}
+  m_PrefabInstance: {fileID: 1961084200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &173272169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2982,7 +2987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3407149674568958940, guid: 766c3bc31f681d54b93370c9bde544d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 378.49
+      value: 381.55
       objectReference: {fileID: 0}
     - target: {fileID: 3407149674568958940, guid: 766c3bc31f681d54b93370c9bde544d0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7024,6 +7029,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595487965724668338, guid: ee9f78de2260f334797914fd5726b2f5, type: 3}
   m_PrefabInstance: {fileID: 858601136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &868989254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6992329356235263671, guid: 5222ddabc5a720b499bb5cfb13bc4fa8, type: 3}
+  m_PrefabInstance: {fileID: 1961084200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &876061481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9198,11 +9208,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1050340148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829862fcf8769fb48b190f96ed1bd2f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 86711e36c3e96ac4abaac5d2b1faa8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentInfantryCount: 0
   currentAirforceCount: 2
+--- !u!114 &1050340155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050340148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80a02920d491cd449fd89e2b01484de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capturedText: {fileID: 171188496}
+  retry: {fileID: 868989254}
 --- !u!1001 &1057865098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14923,11 +14947,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799205885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829862fcf8769fb48b190f96ed1bd2f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93ec773107ff8e64ea67e675031d22a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentInfantryCount: 5
-  currentAirforceCount: 5
+  currentInfantryCount: 2
+  currentAirforceCount: 2
 --- !u!1 &1799527932
 GameObject:
   m_ObjectHideFlags: 0
@@ -15395,7 +15419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8876096899261767581, guid: bc64c6280394a1843816e6fdf684735d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8876096899261767581, guid: bc64c6280394a1843816e6fdf684735d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18270,7 +18294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6501477787351383219, guid: 56a1faa98ec0d994b924539c825bec68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 341.2
+      value: 364.13
       objectReference: {fileID: 0}
     - target: {fileID: 6501477787351383219, guid: 56a1faa98ec0d994b924539c825bec68, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18327,6 +18351,10 @@ PrefabInstance:
     - target: {fileID: 7257973661291275442, guid: 56a1faa98ec0d994b924539c825bec68, type: 3}
       propertyPath: m_Name
       value: Simple Wooden Castle 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257973661291275442, guid: 56a1faa98ec0d994b924539c825bec68, type: 3}
+      propertyPath: m_TagString
+      value: Enemy Castle
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6716298713631034226, guid: 56a1faa98ec0d994b924539c825bec68, type: 3}

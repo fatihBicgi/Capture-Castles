@@ -25,6 +25,7 @@ public class PlayerSpawn : Spawn
             }
 
 
+            //if (other.tag == "Airforce Enhancer")            
             army.currentAirforceCount++;
 
             AirforceInstantiateToNewPoint();
