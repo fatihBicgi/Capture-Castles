@@ -7,7 +7,7 @@ public class WinLoseSituations : MonoBehaviour
 {
     HandleControl handleControl;
     PlayerArmy playerArmy;
-    HandleEnemyArmy enemyArmy;
+    EnemyArmy enemyArmy;
 
     [SerializeField]
     private GameObject capturedText;
@@ -28,7 +28,7 @@ public class WinLoseSituations : MonoBehaviour
     {
         if (other.tag == "Enemy Castle")
         {
-            enemyArmy = other.gameObject.GetComponent<HandleEnemyArmy>();
+            enemyArmy = other.gameObject.GetComponent<EnemyArmy>();
 
             handleControl.currentMoveSpeed = handleControl.slowMoveSpeed;
 

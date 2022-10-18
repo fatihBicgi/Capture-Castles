@@ -11,7 +11,7 @@ public class EnemySpawn : Spawn
     protected override void Start()
     {
         base.Start();
-        army = gameObject.GetComponent<HandleEnemyArmy>();
+        army = gameObject.GetComponent<EnemyArmy>();
 
         for (spawnQueue = 0; spawnQueue < army.currentInfantryCount; spawnQueue++)
         {
