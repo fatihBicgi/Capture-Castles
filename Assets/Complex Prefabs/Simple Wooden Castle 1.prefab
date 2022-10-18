@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6716298712307618905}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.98332727, y: 0.9866667, z: 2.5}
+  m_LocalPosition: {x: 0.98332727, y: 0.9866667, z: 0.5}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 6501477787351383219}
@@ -145,10 +145,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6501477787351383219}
   - component: {fileID: 6716298713631034227}
-  - component: {fileID: 6716298713631034226}
+  - component: {fileID: 1799205886}
+  - component: {fileID: 1799205887}
   m_Layer: 0
   m_Name: Simple Wooden Castle 1
-  m_TagString: Untagged
+  m_TagString: Enemy Castle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +194,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2024887, y: 0.41088694, z: 3.647866}
   m_Center: {x: 1.8512449, y: 0.29455662, z: 1.5}
---- !u!114 &6716298713631034226
+--- !u!114 &1799205886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,19 +203,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 7257973661291275442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0177f691655a262499e73e33922782ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 01ed12577b354444d8fbf5a206bdb279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInfantryCount: 1
-  enemyDragonCount: 1
-  center: {fileID: 0}
   infantrySpawn: {fileID: 6716298713647716489}
   airforceSpawn: {fileID: 6716298712307618905}
-  enemyParent: {fileID: 6716298712622336523}
-  retry: {fileID: 0}
-  capturedText: {fileID: 0}
+  spawnParent: {fileID: 6716298712622336523}
   infantryPrefab: {fileID: 1194915200684165380, guid: 99fedd96794026949b3b6f60ae502ed9, type: 3}
   dragonPrefab: {fileID: 7566033135400450587, guid: 392f4b5d16502ed47b1eb64022892d04, type: 3}
+--- !u!114 &1799205887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257973661291275442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ec773107ff8e64ea67e675031d22a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentInfantryCount: 2
+  currentAirforceCount: 2
 --- !u!1001 &1415828522362190743
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,19 +23,22 @@ public class PlayerSpawn : Spawn
             {
                 InfantrySetNewLineStartPoint();
             }
+        }
 
-
-            //if (other.tag == "Airforce Enhancer")            
+        if (other.tag == "Air Enhancer")
+        {          
             army.currentAirforceCount++;
-
-            AirforceInstantiateToNewPoint();
-            if (army.currentAirforceCount % 2 == 0 && army.currentAirforceCount !=2)
-            {
-                AirforceSetNewLineStartPoint();
+                
+            AirforceInstantiateToNewPoint();            
+            if (army.currentAirforceCount % 2 == 0 && army.currentAirforceCount != 2)              
+            {                   
+                AirforceSetNewLineStartPoint();               
             }
+        }
+            
             
 
-        }
+        
 
     }
 }

@@ -32,7 +32,7 @@ public class WinLoseSituations : MonoBehaviour
 
             handleControl.currentMoveSpeed = handleControl.slowMoveSpeed;
 
-            if (playerArmy.currentInfantryCount > enemyArmy.currentInfantryCount)
+            if (isPlayerStrongerThanEnemy())
             {
                 StartCoroutine(WinTheStage());
 
@@ -45,6 +45,12 @@ public class WinLoseSituations : MonoBehaviour
 
         }
     }
+
+    private bool isPlayerStrongerThanEnemy()
+    {
+        return playerArmy.currentInfantryCount > enemyArmy.currentInfantryCount && playerArmy.currentAirforceCount > enemyArmy.currentAirforceCount;
+    }
+
     IEnumerator WinTheStage()
     {
         Debug.Log("You Win");

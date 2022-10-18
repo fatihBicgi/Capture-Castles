@@ -35,9 +35,7 @@ public class HandleControl : MonoBehaviour
     }
     void FixedUpdate()
     {
-
-        Debug.Log(currentMoveSpeed);
-
+        
         IsPlayerFallableCheck();
 
         TranslateForward();

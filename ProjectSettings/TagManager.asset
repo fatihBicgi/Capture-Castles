@@ -8,6 +8,7 @@ TagManager:
   - Infantry
   - Enhancer
   - Enemy Castle
+  - Air Enhancer
   layers:
   - Default
   - TransparentFX
