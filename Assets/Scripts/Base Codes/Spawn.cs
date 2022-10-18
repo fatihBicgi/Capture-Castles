@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+    //it handled spawn things
+
     [SerializeField]
     protected private GameObject infantrySpawn, airforceSpawn, spawnParent;
 

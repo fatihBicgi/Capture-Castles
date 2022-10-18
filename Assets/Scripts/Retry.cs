@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
-    public void retry()
-    {
-        SceneManager.LoadScene(0);
+    // it loads current scene
+
+    public void RetryFunction()
+    {              
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
-    public void RetryForSecondLevel()
-    {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1;
-    }
+    
 }

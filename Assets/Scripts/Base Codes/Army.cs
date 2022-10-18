@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Army : MonoBehaviour
-{    
-    //Armyleri Player ve Enemy diye bölmeye gerek kalmadý gibi þu an
+{
+    //it holds army counts
+
     public int currentInfantryCount, currentAirforceCount;
 }

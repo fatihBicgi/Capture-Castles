@@ -6516,7 +6516,7 @@ PrefabInstance:
       objectReference: {fileID: 1423149525}
     - target: {fileID: 6992329356235263669, guid: 5222ddabc5a720b499bb5cfb13bc4fa8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: retry
+      value: RetryFunction
       objectReference: {fileID: 0}
     - target: {fileID: 6992329356603215315, guid: 5222ddabc5a720b499bb5cfb13bc4fa8, type: 3}
       propertyPath: m_Pivot.x

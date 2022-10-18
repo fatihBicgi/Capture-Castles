@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class WinLoseSituations : MonoBehaviour
 {
+    //it checks player win or lose situations
+
     HandleControl handleControl;
     PlayerArmy playerArmy;
     EnemyArmy enemyArmy;

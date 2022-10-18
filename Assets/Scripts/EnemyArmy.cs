@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EnemyArmy : Army
 {
-   
+    // not overridden anything
 }

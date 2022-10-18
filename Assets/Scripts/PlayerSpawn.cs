@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerSpawn : Spawn 
     
-    //spawn noktalarý ve rotasyonlarý enemyde çalýýyor ama burda çalýþmýyor
-    // enhancer hava ve kara için ayrýþtýrýlmadý henüz
+    // it works when on trigger enter only
 {
     protected override void Start()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawn : Spawn
 
-    //spawn noktalarý burada sorunsuz çalýþýyor gibiydi ama player için aynýsý geçerli deðil
+     // it works once on start only
 {
     private int spawnQueue = 0;
 
